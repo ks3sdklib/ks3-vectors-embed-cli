@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ks3-vectors-embed-cli"
+dynamic = ["version"]
+description = "Standalone CLI for KS3 Vector operations with pluggable embeddings"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Kingsoft Cloud KS3"}
+]
+maintainers = [
+    {name = "Kingsoft Cloud KS3"}
+]
+keywords = ["ks3", "vectors", "embeddings", "object-storage", "cli", "machine-learning", "ai"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Environment :: Console",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "ks3sdk>=1.19.0",
+    "click>=8.0.0",
+    "rich>=12.0.0",
+]
+
+[project.scripts]
+ks3-vectors-embed = "ks3_vectors.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ks3sdklib/ks3-vectors-embed-cli"
+Repository = "https://github.com/ks3sdklib/ks3-vectors-embed-cli"
+Issues = "https://github.com/ks3sdklib/ks3-vectors-embed-cli/issues"
+Documentation = "https://github.com/ks3sdklib/ks3-vectors-embed-cli#readme"
+Source = "https://github.com/ks3sdklib/ks3-vectors-embed-cli"
+
+[tool.setuptools]
+packages = ["ks3_vectors", "ks3_vectors.commands", "ks3_vectors.core", "ks3_vectors.utils"]
+
+[tool.setuptools.dynamic]
+version = {attr = "ks3_vectors.__version__.__version__"}
